@@ -1,0 +1,59 @@
+{
+  "name": "Aviso",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "mensagem": {
+      "type": "string",
+      "required": true
+    },
+    "validade": {
+      "type": "boolean",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "responsavel": {
+      "type": "belongsTo",
+      "polymorphic": true
+    },
+    "horarios": {
+      "type": "hasOne",
+      "model": "Horario",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "turma": {
+      "type": "belongsTo",
+      "model": "Turma",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "salas": {
+      "type": "hasOne",
+      "model": "Sala",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "orgao": {
+      "type": "belongsTo",
+      "model": "Orgao",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
